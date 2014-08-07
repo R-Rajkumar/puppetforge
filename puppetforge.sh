@@ -27,7 +27,6 @@ print_error "You should install puppet master before running this script"
 }
 check_for_puppet
 print_usage
-gem install puppet-module
 INPUT=modules.txt
 OLDIFS=$IFS
 IFS=,
