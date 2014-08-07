@@ -1,4 +1,8 @@
 #!/bin/bash
+#This script will install puppet forge modules to /etc/puppet/modules
+#If you specify any version for a module, you have to specify dependencies #too.
+#If you don't specify any version for a module, all dependencies of that #module will be installed automatically.
+
 ECHO=`which echo`
 function print_usage(){
     ${ECHO} -e "Puppet Module Tool Installer v1 2014-02-12"
@@ -33,7 +37,10 @@ IFS=,
 [ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
 while read module version
 do
+	if [[ -n $version ]]; then
         puppet module install $module --version $version
+	else
+	puppet module install $module
 done < $INPUT
 IFS=$OLDIFS
 
