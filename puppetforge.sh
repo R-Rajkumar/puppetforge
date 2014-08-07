@@ -107,10 +107,8 @@ function get_confirmation(){
     ${ECHO} -e ""
     ${ECHO} -e "Please check your input and confirm by pressing [Enter] to continue. "
     ${ECHO} -en "Or press [Ctrl] + [c] to stop the installationan exit. : "
-
-    if [ ${FORCEYES} -eq 0 ]; then
+    
 read input
-    fi
 
 if [ ${VERBOSE} -eq 0 ]; then
         ${ECHO} -e "Installation started. Please wait ... "
@@ -163,6 +161,10 @@ do
 	fi
 done < $INPUT
 IFS=$OLDIFS
+
+if [ ${VERBOSE} -eq 0 ]; then
+        ${ECHO} -e "Installation completed."
+    fi
 
 
 
