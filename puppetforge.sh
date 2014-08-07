@@ -1,5 +1,3 @@
-  GNU nano 2.2.6                                                                  File: rr.sh                                                                                                                                          
-
 #!/bin/bash
 ECHO=`which echo`
 function print_usage(){
