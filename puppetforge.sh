@@ -101,9 +101,10 @@ print_error "Puppet master not found\n
 
 function get_confirmation(){
 # Get user confirmation
+    ${ECHO} -e ""	
     ${ECHO} -e "Puppetforge Module Installer"
     ${ECHO} -e "This script will install pupeptforge modules which are "
-    ${ECHO} -e " specified in puppetforge.modules file"
+    ${ECHO} -e "specified in puppetforge.modules file"
     ${ECHO} -e ""
     ${ECHO} -e "Please check your input and confirm by pressing [Enter] to continue. "
     ${ECHO} -en "Or press [Ctrl] + [c] to stop the installationan exit. : "
