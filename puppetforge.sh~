@@ -1,6 +1,6 @@
 #!/bin/bash
 #This script will install puppet forge modules to /etc/puppet/modules
-#If you specify any version for a module, you have to specify dependencies too
+#If you specify any version for a module, you have to specify dependencies #too.
 #If you don't specify any version for a module, all dependencies of that #module will be installed automatically.
 
 ECHO=`which echo`
