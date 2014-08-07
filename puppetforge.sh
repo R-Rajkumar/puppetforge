@@ -14,23 +14,42 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# This script will install puppet forge modules which are specified in puppetforge.modules
+# It will read modules from modules file and install them to /etc/puppet/modules
 
-# This script will install puppet forge modules to /etc/puppet/modules
-# It will read the modules from modules file.
-# If you specify any version for a module, you have to specify dependencies
-# too. For example, if you want to install a specific version of apache,
-# you would modify your puppetforge.modules file as below,
+# Requirements :
+# Puppet should exist on system before running this script
+# Refer https://cwiki.apache.org/confluence/display/STRATOS/4.0.0+Configuring+Puppet+Master to install puppet master on your system
+#
+# Usage :
+# ./puppetforge.sh -v|-h|--help
+#
+# h|help => for help
+# v => to enable verbose mode
+#
+# Usage of puppetforge.modules
+# ============================
+#
+# Specify puppetforge modules you want to install on your puppet master.
+# Don't worry about the dependent modules. Puppt Module Tool will find and download them automatically.
+#
+# Example 1 :
+#	puppetlabs-apache
+#	
+#	Caution : It will download latest puppetlabs-apache module and all dependent modules to /etc/puppet/modules
+#	
+# Example 2 :
 #	puppetlabs-apache, 1.1.1
-#	puppetlabs-stdlib, 2.4.0
-#	puppetlabs-concat, 1.0.0
+#	
+#	Caution : It will download puppetlabs-apache 1.1.1 module and all dependent modules (might be older ones) to /etc/puppet/modules
+#			  
+# Recommended way
+# ===============
+#
+# Don't specify any version unless required. You will be guranteed to have latest modules.
+# Please note that these versions are not actual software versions. These are puppet module's version.
+# Hence, it is always better to install latest puppet module.
 
-# On the otherhand, if you don't specify any version for a module, 
-# it will download the latest version with all dependencies of that module 
-# automatically
-# For example, if you want to install the latest version of apache module,
-# you would modify your puppetforge.modules file as below,
-#	puppetlabs-apche
-# Puppet Module Tool will find right dependencies and install them for you.
 
 set -e
 
@@ -43,27 +62,44 @@ VERBOSE=0
 # Execute bashtrap function when user press [Ctrl]+[c]
 trap bashtrap INT
 
-function print_usage(){
-    ${ECHO} -e "Puppetforge Module Installer v1 2014-02-12"
-    ${ECHO} -e ""	
-    ${ECHO} -e "This script will download all the puppetforge modules which"
-    ${ECHO} -e "are specified in the puppetforge.modules"
+function print_usage(){    
+    ${ECHO} -e " This script will install puppet forge modules which are specified in puppetforge.modules"
+    ${ECHO} -e " It will read modules from modules file and install them to /etc/puppet/modules"
     ${ECHO} -e ""
-    ${ECHO} -e "Requirements: "
-    ${ECHO} -e " Puppet Master should be installed before running this script"
-    ${ECHO} -e " Refer https://cwiki.apache.org/confluence/display/STRATOS/4.0.0+Configuring+Puppet+Master"
+    ${ECHO} -e " Requirements :"
+    ${ECHO} -e " =============="
+    ${ECHO} -e " Puppet should exist on system before running this script"
+    ${ECHO} -e " Refer https://cwiki.apache.org/confluence/display/STRATOS/4.0.0+Configuring+Puppet+Master to install puppet master on your system"
     ${ECHO} -e ""
-    ${ECHO} -e "Usage: "
-    ${ECHO} -e " bash puppetforge"
-    ${ECHO} -e " If you want specific versions of modules, "
-    ${ECHO} -e " you can specify a version for each modules in puppetforge.modules"
-    ${ECHO} -e ""    
-    ${ECHO} -e " If you specify versions, dependency modules will not be downloaded automatically, "
-    ${ECHO} -e " you have to specify all dependency modules and versions in puppetforge.modules"
+    ${ECHO} -e " Usage :"
+    ${ECHO} -e " ======="
+    ${ECHO} -e " ./puppetforge.sh -v|-h|--help"
     ${ECHO} -e ""
-    ${ECHO} -e " If you don't specify any versions, puppet module tool "
-    ${ECHO} -e " will downlaod latest version with all the dependencies automatically"
+    ${ECHO} -e " h|help => for help"
+    ${ECHO} -e " v => to enable verbose mode"
     ${ECHO} -e ""
+    ${ECHO} -e " Usage of puppetforge.modules"
+    ${ECHO} -e " ============================"
+    ${ECHO} -e ""
+    ${ECHO} -e " Specify puppetforge modules you want to install on your puppet master."
+    ${ECHO} -e " Don't worry about the dependent modules. Puppt Module Tool will find and download them automatically."
+    ${ECHO} -e ""
+    ${ECHO} -e " Example 1 :"
+    ${ECHO} -e "	puppetlabs-apache"
+    ${ECHO} -e "	"
+    ${ECHO} -e "	Caution : It will download latest puppetlabs-apache module and all dependent modules to /etc/puppet/modules"
+    ${ECHO} -e ""
+    ${ECHO} -e " Example 2 :"
+    ${ECHO} -e "	puppetlabs-apache, 1.1.1"
+    ${ECHO} -e ""
+    ${ECHO} -e "	Caution : It will download puppetlabs-apache 1.1.1 module and all dependent modules (might be older ones) to /etc/puppet/modules"
+    ${ECHO} -e ""
+    ${ECHO} -e " Recommended way"
+    ${ECHO} -e " ==============="
+    ${ECHO} -e ""
+    ${ECHO} -e " Don't specify any version unless required. You will be guranteed to have latest modules."
+    ${ECHO} -e " Please note that these versions are not actual software versions. These are puppet module's version."
+    ${ECHO} -e " Hence, it is always better to install latest puppet module."
 }
 
 function print_message(){
