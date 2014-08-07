@@ -110,9 +110,7 @@ function get_confirmation(){
     
 read input
 
-if [ ${VERBOSE} -eq 0 ]; then
-        ${ECHO} -e "Installation started. Please wait ... "
-    fi
+${ECHO} -e "Installation started. Please wait ... "
 }
 
 bashtrap(){
@@ -162,9 +160,6 @@ do
 done < $INPUT
 IFS=$OLDIFS
 
-if [ ${VERBOSE} -eq 0 ]; then
-        ${ECHO} -e "Installation completed."
-    fi
-
+${ECHO} -e "Installation completed!"
 
 
