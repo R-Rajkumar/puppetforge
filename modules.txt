@@ -1,0 +1,2 @@
+puppetlabs-apache, 0.0.2
+puppetlabs-passenger, 0.1.2
