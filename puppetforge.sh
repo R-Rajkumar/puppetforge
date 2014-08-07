@@ -31,7 +31,7 @@ print_error "You should install puppet master before running this script"
 }
 check_for_puppet
 print_usage
-INPUT=modules.txt
+INPUT=modules
 OLDIFS=$IFS
 IFS=,
 [ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
