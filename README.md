@@ -16,7 +16,8 @@ v => to enable verbose mode
 Usage of puppetforge.modules
 ============================
 
-Specify puppetforge modules you want to install on your puppet master
+Specify puppetforge modules you want to install on your puppet master.
+Don't worry about the dependent modules. Puppt Module Tool will find and download them automatically.
 
 Example 1 :
 	puppetlabs-apache
@@ -26,23 +27,11 @@ Example 1 :
 Example 2 :
 	puppetlabs-apache, 1.1.1
 	
-	Caution : It will download puppetlabs-apache 1.1.1 module and all dependent modules to /etc/puppet/modules
-			  It works because latest puppetlabs-apache version is 1.1.1
-			  
-Example 3 :
-	puppetlabs-apache, 0.2.1
-	
-	Caution : It will only download puppetlabs-apache 1.0.1 module to /etc/puppet/modules
-			  You have to list dependent modules in puppetforge.modules explicitly as below,
+	Caution : It will download puppetlabs-apache 1.1.1 module and all dependent modules (might be older ones) to /etc/puppet/modules
 			  
 Recommended way
 ===============
 
-Don't specify any version unless required.
-
-If you specify any version to one module, do so for all modules. Because it is not guranteed that it will download dependent modules if you specify an older version of a module.
-			
-
-
-
-
+Don't specify any version unless required. You will be guranteed to have latest modules.
+Please note that these versions are not actual software versions. These are puppet module's version.
+Hence, it is always better to install latest puppet module.
