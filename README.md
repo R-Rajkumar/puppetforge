@@ -4,10 +4,12 @@ puppetforge
 This script will install puppet forge modules which are specified in puppetforge.modules
 
 Requirements :
+=============
 Puuppet should be exist on system before running this script
 Refer https://cwiki.apache.org/confluence/display/STRATOS/4.0.0+Configuring+Puppet+Master to install puppet master on your system
 
 Usage :
+======
 ./puppetforge.sh -v|-h|--help
 
 h|help => for help
@@ -28,7 +30,7 @@ Example 2 :
 	puppetlabs-apache, 1.1.1
 	
 	Caution : It will download puppetlabs-apache 1.1.1 module and all dependent modules (might be older ones) to /etc/puppet/modules
-			  
+	  
 Recommended way
 ===============
 
