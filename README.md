@@ -25,7 +25,7 @@ At this point, you should have puppet master installed and running on your syste
 
 	git clone https://github.com/R-Rajkumar/puppetforge.git
 
-4. Go into puppetforge directory
+4. Go into cloned puppetforge directory
 
 	cd /dir/to/puppetforge/
 
