@@ -50,11 +50,13 @@ Specify puppetforge modules you want to install on your puppet master.
 Don't worry about the dependent modules. Puppt Module Tool will find and download them automatically.
 
 Example 1 :
+
 	puppetlabs-apache
 	
 	Caution : It will download latest puppetlabs-apache module and all dependent modules to /etc/puppet/modules
 	
 Example 2 :
+
 	puppetlabs-apache, 1.1.1
 	
 	Caution : It will download puppetlabs-apache 1.1.1 module and all dependent modules (might be older ones) to /etc/puppet/modules
