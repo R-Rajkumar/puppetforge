@@ -13,23 +13,29 @@ Usage :
 At this point, you should have puppet master installed on your system.
 
 1. Get root access
+
  	sudo -i
 
 2. Install Git
+
 	apt-get install -y git
 
 3. Clone puppetforge script
+
 	git clone 
 
 4. Go into puppetforge directory
+
 	cd /dir/to/puppetforge/
 
 5. Give executable permission to puppetforge.sh
+
  	chmod +x puppetforge.sh
 
 6. Specify the puppetforge modules you want to install in puppetforge.modules file
 
 7. run puppetforge.sh
+
 	./puppetforge.sh -v|-h|--help
 
 Options :
