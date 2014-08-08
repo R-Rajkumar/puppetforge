@@ -25,6 +25,8 @@ At this point, you should have puppet master installed on your system.
 7. run puppetforge.sh
 	./puppetforge.sh -v|-h|--help
 
+Options :
+=========
 h|help => for help
 v => to enable verbose mode
 
