@@ -29,13 +29,9 @@ At this point, you should have puppet master installed and running on your syste
 
 	cd /dir/to/puppetforge/
 
-5. Give executable permission to puppetforge.sh
+5. Specify the puppetforge modules you want to install in puppetforge.modules file
 
- 	chmod +x puppetforge.sh
-
-6. Specify the puppetforge modules you want to install in puppetforge.modules file
-
-7. run puppetforge.sh
+6. run puppetforge.sh
 
 	./puppetforge.sh -v|-h|--help
 
