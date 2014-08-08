@@ -48,8 +48,8 @@ v => to enable verbose mode
 Usage of puppetforge.modules
 ============================
 
-Specify puppetforge modules you want to install on your puppet master.
-Don't worry about the dependent modules. Puppt Module Tool will find and download them automatically.
+Specify puppetforge modules you want to install on your puppet master in puppetforge.modules file.
+Don't worry about the dependent modules, puppt module tool will find and download them automatically.
 
 Example 1 :
 
