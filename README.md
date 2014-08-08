@@ -22,7 +22,7 @@ At this point, you should have puppet master installed on your system.
 
 3. Clone puppetforge script
 
-	git clone 
+	git clone https://github.com/R-Rajkumar/puppetforge.git
 
 4. Go into puppetforge directory
 
