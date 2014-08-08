@@ -6,6 +6,7 @@ This script will install puppet forge modules which are specified in puppetforge
 Requirements :
 =============
 Puuppet should be exist on system before running this script
+
 Refer https://cwiki.apache.org/confluence/display/STRATOS/4.0.0+Configuring+Puppet+Master to install puppet master on your system
 
 Usage :
@@ -41,6 +42,7 @@ At this point, you should have puppet master installed on your system.
 Options :
 =========
 h|help => for help
+
 v => to enable verbose mode
 
 Usage of puppetforge.modules
