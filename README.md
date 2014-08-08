@@ -11,6 +11,7 @@ Refer https://cwiki.apache.org/confluence/display/STRATOS/4.0.0+Configuring+Pupp
 Usage :
 ======
 At this point, you should have puppet master installed on your system.
+
 1. Get root access
  	sudo -i
 
